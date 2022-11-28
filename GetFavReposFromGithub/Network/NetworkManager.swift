@@ -21,7 +21,9 @@ enum HTTPMethod: String {
 class NetworkManager {
     func request<T: Decodable>(urlString: String, method: HTTPMethod, success: @escaping (T) -> (), failure: @escaping (NetworkError) -> ()) {
         guard let url = URL.init(string: urlString) else {
-            failure(.url)
+            DispatchQueue.main.async {
+                failure(.url)
+            }
             return
         }
         
@@ -30,19 +32,28 @@ class NetworkManager {
         
         let request = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             if error != nil {
-                failure(.network)
+                DispatchQueue.main.async {
+                    failure(.network)
+                }
             }
             
             guard let data = data else {
-                failure(.data)
+                DispatchQueue.main.async {
+                    failure(.data)
+                }
+               
                 return
             }
             
             do {
                 let model = try JSONDecoder().decode(T.self, from: data)
-                success(model)
+                DispatchQueue.main.async {
+                    success(model)
+                }
             } catch {
-                failure(.parse)
+                DispatchQueue.main.async {
+                    failure(.parse)
+                }
             }
         }.resume()
     }

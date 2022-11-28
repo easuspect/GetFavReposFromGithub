@@ -13,6 +13,8 @@
 		D70D6AF12929FDA100B14DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D70D6AEF2929FDA100B14DDF /* LaunchScreen.storyboard */; };
 		D70D6AFD292A036400B14DDF /* GetReposResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D6AFC292A036400B14DDF /* GetReposResponse.swift */; };
 		D70D6B00292A053D00B14DDF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D6AFF292A053D00B14DDF /* NetworkManager.swift */; };
+		D70D6B2B2935169400B14DDF /* ReposCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D6B2A2935169400B14DDF /* ReposCell.swift */; };
+		D70D6B2E293522A300B14DDF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D70D6B2D293522A300B14DDF /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		D70D6AF22929FDA100B14DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D70D6AFC292A036400B14DDF /* GetReposResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposResponse.swift; sourceTree = "<group>"; };
 		D70D6AFF292A053D00B14DDF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D70D6B2A2935169400B14DDF /* ReposCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70D6B2E293522A300B14DDF /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				D70D6AE82929FD9F00B14DDF /* ReposViewController.swift */,
+				D70D6B2A2935169400B14DDF /* ReposCell.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -123,6 +128,9 @@
 			dependencies = (
 			);
 			name = GetFavReposFromGithub;
+			packageProductDependencies = (
+				D70D6B2D293522A300B14DDF /* Kingfisher */,
+			);
 			productName = GetFavReposFromGithub;
 			productReference = D70D6AE12929FD9F00B14DDF /* GetFavReposFromGithub.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +159,9 @@
 				Base,
 			);
 			mainGroup = D70D6AD82929FD9F00B14DDF;
+			packageReferences = (
+				D70D6B2C293522A300B14DDF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D70D6AE22929FD9F00B14DDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +192,7 @@
 				D70D6AE92929FD9F00B14DDF /* ReposViewController.swift in Sources */,
 				D70D6AE52929FD9F00B14DDF /* AppDelegate.swift in Sources */,
 				D70D6AFD292A036400B14DDF /* GetReposResponse.swift in Sources */,
+				D70D6B2B2935169400B14DDF /* ReposCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D70D6B2C293522A300B14DDF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D70D6B2D293522A300B14DDF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D70D6B2C293522A300B14DDF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D70D6AD92929FD9F00B14DDF /* Project object */;
 }

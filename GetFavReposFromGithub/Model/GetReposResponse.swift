@@ -15,4 +15,9 @@ struct GetReposResponse: Decodable {
 struct GithubRepo: Decodable {
     
     let name: String
+    let owner: GithubOwner
+}
+
+struct GithubOwner: Decodable {
+    let avatar_url: String
 }
