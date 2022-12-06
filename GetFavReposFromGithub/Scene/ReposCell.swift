@@ -41,6 +41,7 @@ final class ReposCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         label.text = nil
+        image.image = nil
     }
 }
 

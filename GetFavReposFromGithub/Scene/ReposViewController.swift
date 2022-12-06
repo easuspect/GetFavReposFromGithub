@@ -55,7 +55,6 @@ extension ReposViewController: UITableViewDataSource {
             fatalError("error")
         }
         cell.configure(with: repoList[indexPath.row])
-        
         return cell
     }
 }

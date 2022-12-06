@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func startApp() {
+        let coreDataManager = CoreDataManager()
+        let result = coreDataManager.fetch()
+        print(result)
         let reposViewController = ReposViewController(api: NetworkManager())
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController.init(rootViewController: reposViewController)

@@ -19,5 +19,6 @@ struct GithubRepo: Decodable {
 }
 
 struct GithubOwner: Decodable {
+    
     let avatar_url: String
 }
